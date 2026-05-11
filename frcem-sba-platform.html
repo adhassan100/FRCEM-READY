@@ -1,0 +1,1353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FRCEM SBA Mastery — Your Pathway to Success</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #0a1628;
+    --navy-mid: #142035;
+    --navy-light: #1e3052;
+    --gold: #c9a227;
+    --gold-light: #e8c45a;
+    --gold-pale: #fdf6e3;
+    --teal: #1d7c6e;
+    --teal-light: #e6f4f2;
+    --red: #c0392b;
+    --red-light: #fdf0ee;
+    --green: #1a6b3c;
+    --green-light: #eaf4ee;
+    --slate: #4a5568;
+    --border: #e2e8f0;
+    --bg: #f8fafc;
+    --white: #ffffff;
+    --text: #1a202c;
+    --text-muted: #64748b;
+    --font-serif: 'DM Serif Display', Georgia, serif;
+    --font-sans: 'DM Sans', system-ui, sans-serif;
+    --radius: 10px;
+    --radius-lg: 16px;
+    --shadow: 0 1px 3px rgba(0,0,0,0.08), 0 1px 2px rgba(0,0,0,0.06);
+    --shadow-md: 0 4px 12px rgba(0,0,0,0.1);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: var(--font-sans); background: var(--bg); color: var(--text); line-height: 1.6; }
+
+  /* NAV */
+  .nav {
+    background: var(--navy);
+    padding: 0 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 64px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  .nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--white);
+    font-family: var(--font-serif);
+    font-size: 1.3rem;
+    text-decoration: none;
+  }
+  .nav-logo span {
+    color: var(--gold);
+  }
+  .nav-pill {
+    background: rgba(201,162,39,0.2);
+    color: var(--gold-light);
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 3px 10px;
+    border-radius: 20px;
+    border: 1px solid rgba(201,162,39,0.4);
+  }
+  .nav-links {
+    display: flex;
+    gap: 6px;
+    align-items: center;
+  }
+  .nav-links button {
+    background: none;
+    border: none;
+    color: rgba(255,255,255,0.7);
+    font-family: var(--font-sans);
+    font-size: 0.875rem;
+    padding: 6px 14px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.15s, color 0.15s;
+    font-weight: 500;
+  }
+  .nav-links button:hover, .nav-links button.active {
+    background: rgba(255,255,255,0.1);
+    color: var(--white);
+  }
+  .nav-links button.active {
+    color: var(--gold-light);
+  }
+  .nav-cta {
+    background: var(--gold) !important;
+    color: var(--navy) !important;
+    font-weight: 600 !important;
+    padding: 6px 18px !important;
+  }
+  .nav-cta:hover { background: var(--gold-light) !important; }
+
+  /* PAGES */
+  .page { display: none; }
+  .page.active { display: block; }
+
+  /* HERO */
+  .hero {
+    background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 60%, #1a2e4a 100%);
+    padding: 5rem 2rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -60px; right: -60px;
+    width: 320px; height: 320px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(201,162,39,0.12) 0%, transparent 70%);
+  }
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(201,162,39,0.15);
+    border: 1px solid rgba(201,162,39,0.4);
+    color: var(--gold-light);
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 5px 14px;
+    border-radius: 20px;
+    margin-bottom: 1.5rem;
+  }
+  .hero h1 {
+    font-family: var(--font-serif);
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    color: var(--white);
+    line-height: 1.15;
+    max-width: 760px;
+    margin: 0 auto 1.25rem;
+  }
+  .hero h1 em {
+    color: var(--gold);
+    font-style: italic;
+  }
+  .hero p {
+    color: rgba(255,255,255,0.75);
+    font-size: 1.05rem;
+    max-width: 560px;
+    margin: 0 auto 2.5rem;
+    line-height: 1.7;
+  }
+  .hero-actions {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .btn-primary {
+    background: var(--gold);
+    color: var(--navy);
+    border: none;
+    padding: 12px 28px;
+    border-radius: var(--radius);
+    font-family: var(--font-sans);
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.15s, transform 0.1s;
+  }
+  .btn-primary:hover { background: var(--gold-light); transform: translateY(-1px); }
+  .btn-outline {
+    background: transparent;
+    color: var(--white);
+    border: 1.5px solid rgba(255,255,255,0.35);
+    padding: 12px 28px;
+    border-radius: var(--radius);
+    font-family: var(--font-sans);
+    font-size: 0.95rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: border-color 0.15s, background 0.15s;
+  }
+  .btn-outline:hover { border-color: rgba(255,255,255,0.7); background: rgba(255,255,255,0.08); }
+
+  .hero-stats {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    margin-top: 3.5rem;
+    flex-wrap: wrap;
+  }
+  .hero-stat { text-align: center; }
+  .hero-stat .num {
+    font-family: var(--font-serif);
+    font-size: 2rem;
+    color: var(--gold);
+    display: block;
+  }
+  .hero-stat .lbl {
+    font-size: 0.8rem;
+    color: rgba(255,255,255,0.55);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+
+  /* STATS BAR */
+  .stats-bar {
+    background: var(--white);
+    border-bottom: 1px solid var(--border);
+    padding: 1.5rem 2rem;
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+  .stat-card {
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1rem 1.5rem;
+    flex: 1;
+    min-width: 160px;
+    text-align: center;
+  }
+  .stat-card .value {
+    font-family: var(--font-serif);
+    font-size: 1.75rem;
+    color: var(--navy);
+    display: block;
+  }
+  .stat-card .label { font-size: 0.8rem; color: var(--text-muted); margin-top: 2px; }
+  .stat-card.highlight { background: var(--gold-pale); border-color: rgba(201,162,39,0.4); }
+  .stat-card.highlight .value { color: var(--gold); }
+
+  /* MAIN LAYOUT */
+  .container { max-width: 1200px; margin: 0 auto; padding: 2rem; }
+  .section-title {
+    font-family: var(--font-serif);
+    font-size: 1.6rem;
+    color: var(--navy);
+    margin-bottom: 0.5rem;
+  }
+  .section-sub { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 2rem; }
+
+  /* EXAM INFO */
+  .exam-banner {
+    background: var(--navy);
+    color: var(--white);
+    border-radius: var(--radius-lg);
+    padding: 1.75rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+  }
+  .exam-banner h3 {
+    font-family: var(--font-serif);
+    font-size: 1.1rem;
+    color: var(--gold);
+    margin-bottom: 6px;
+  }
+  .exam-banner p { color: rgba(255,255,255,0.75); font-size: 0.875rem; }
+  .exam-dates {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+  }
+  .exam-date-item {
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: var(--radius);
+    padding: 0.75rem 1.25rem;
+    text-align: center;
+    min-width: 140px;
+  }
+  .exam-date-item .date-val {
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: var(--gold-light);
+    display: block;
+  }
+  .exam-date-item .date-lbl {
+    font-size: 0.75rem;
+    color: rgba(255,255,255,0.5);
+    margin-top: 2px;
+  }
+
+  /* SLO GRID */
+  .slo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 1.25rem;
+    margin-bottom: 2.5rem;
+  }
+  .slo-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 1.5rem;
+    cursor: pointer;
+    transition: border-color 0.15s, box-shadow 0.15s, transform 0.1s;
+    position: relative;
+    overflow: hidden;
+  }
+  .slo-card::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 4px;
+    background: var(--card-accent, var(--navy));
+    border-radius: 4px 0 0 4px;
+  }
+  .slo-card:hover {
+    border-color: var(--card-accent, var(--navy));
+    box-shadow: var(--shadow-md);
+    transform: translateY(-2px);
+  }
+  .slo-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 0.75rem;
+    gap: 1rem;
+  }
+  .slo-tag {
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 3px 8px;
+    border-radius: 6px;
+    background: var(--card-bg, #f0f4f8);
+    color: var(--card-color, var(--navy));
+    white-space: nowrap;
+  }
+  .slo-badge {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    background: var(--bg);
+    border: 1px solid var(--border);
+    padding: 3px 10px;
+    border-radius: 20px;
+    white-space: nowrap;
+  }
+  .slo-card h3 {
+    font-size: 0.975rem;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 0.5rem;
+    line-height: 1.4;
+  }
+  .slo-card p {
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    line-height: 1.55;
+    margin-bottom: 1rem;
+  }
+  .slo-progress-wrap {
+    margin-bottom: 0.75rem;
+  }
+  .slo-progress-top {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    margin-bottom: 5px;
+  }
+  .progress-bar {
+    height: 5px;
+    background: var(--border);
+    border-radius: 3px;
+    overflow: hidden;
+  }
+  .progress-fill {
+    height: 100%;
+    background: var(--card-accent, var(--navy));
+    border-radius: 3px;
+    transition: width 0.5s ease;
+  }
+  .slo-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 0.75rem;
+    border-top: 1px solid var(--border);
+  }
+  .slo-counts {
+    display: flex;
+    gap: 1rem;
+  }
+  .slo-count { font-size: 0.75rem; color: var(--text-muted); }
+  .slo-count strong { color: var(--text); font-weight: 600; }
+  .btn-sm {
+    background: var(--card-accent, var(--navy));
+    color: var(--white);
+    border: none;
+    padding: 6px 16px;
+    border-radius: 8px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    cursor: pointer;
+    font-family: var(--font-sans);
+    transition: opacity 0.15s;
+  }
+  .btn-sm:hover { opacity: 0.85; }
+
+  /* FREE VS PAID */
+  .tier-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem;
+    margin-bottom: 2.5rem;
+  }
+  @media (max-width: 640px) { .tier-grid { grid-template-columns: 1fr; } }
+  .tier-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 1.75rem;
+  }
+  .tier-card.premium {
+    border: 2px solid var(--gold);
+    background: var(--gold-pale);
+  }
+  .tier-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 1.25rem;
+  }
+  .tier-icon {
+    width: 40px; height: 40px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+  }
+  .tier-card h3 { font-size: 1rem; font-weight: 600; color: var(--navy); }
+  .tier-card .price { font-family: var(--font-serif); font-size: 0.9rem; color: var(--text-muted); }
+  .feature-list { list-style: none; }
+  .feature-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    padding: 6px 0;
+    font-size: 0.875rem;
+    color: var(--text);
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+  }
+  .feature-list li:last-child { border-bottom: none; }
+  .feat-tick { color: var(--teal); font-weight: 700; flex-shrink: 0; margin-top: 1px; }
+  .feat-cross { color: #ccc; flex-shrink: 0; margin-top: 1px; }
+
+  /* MOCK TEST */
+  .mock-page { padding: 2rem; max-width: 900px; margin: 0 auto; }
+  .mock-header {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 1.5rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-bottom: 1.5rem;
+  }
+  .mock-header h2 { font-family: var(--font-serif); font-size: 1.3rem; color: var(--navy); }
+  .mock-meta { display: flex; gap: 1.5rem; align-items: center; flex-wrap: wrap; }
+  .mock-chip {
+    background: var(--bg);
+    border: 1px solid var(--border);
+    padding: 5px 14px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    font-weight: 500;
+  }
+  .timer-chip {
+    background: var(--navy);
+    color: var(--gold-light);
+    border: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-family: 'Courier New', monospace;
+  }
+  .q-counter {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    font-size: 0.875rem;
+    color: var(--text-muted);
+  }
+  .q-progress { height: 4px; background: var(--border); border-radius: 2px; overflow: hidden; margin-bottom: 1.75rem; }
+  .q-progress-fill { height: 100%; background: var(--gold); border-radius: 2px; transition: width 0.4s; }
+
+  .question-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 2rem;
+    margin-bottom: 1.25rem;
+  }
+  .q-slo-tag {
+    display: inline-block;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 3px 10px;
+    border-radius: 20px;
+    background: var(--teal-light);
+    color: var(--teal);
+    margin-bottom: 1rem;
+  }
+  .question-card h3 {
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 1.65;
+    color: var(--text);
+    margin-bottom: 1.5rem;
+  }
+  .options-list { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+  .option-btn {
+    width: 100%;
+    text-align: left;
+    background: var(--bg);
+    border: 1.5px solid var(--border);
+    border-radius: var(--radius);
+    padding: 0.875rem 1.25rem;
+    font-family: var(--font-sans);
+    font-size: 0.9rem;
+    color: var(--text);
+    cursor: pointer;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    transition: border-color 0.15s, background 0.15s;
+    line-height: 1.5;
+  }
+  .option-btn:hover:not(:disabled) {
+    border-color: var(--navy);
+    background: var(--white);
+  }
+  .option-btn.selected { border-color: var(--navy); background: #f0f4f8; }
+  .option-btn.correct { border-color: var(--green); background: var(--green-light); }
+  .option-btn.incorrect { border-color: var(--red); background: var(--red-light); }
+  .option-btn:disabled { cursor: default; }
+  .opt-letter {
+    font-weight: 700;
+    font-size: 0.8rem;
+    min-width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    color: var(--slate);
+    margin-top: 1px;
+  }
+  .option-btn.correct .opt-letter { background: var(--green); color: white; }
+  .option-btn.incorrect .opt-letter { background: var(--red); color: white; }
+  .option-btn.selected .opt-letter { background: var(--navy); color: white; }
+
+  .explanation-box {
+    display: none;
+    background: #f0f7f4;
+    border: 1px solid #b2d8cb;
+    border-radius: var(--radius);
+    padding: 1.25rem 1.5rem;
+    margin-top: 1.25rem;
+  }
+  .explanation-box.show { display: block; }
+  .explanation-box h4 { font-size: 0.875rem; font-weight: 600; color: var(--teal); margin-bottom: 0.5rem; }
+  .explanation-box p { font-size: 0.875rem; color: var(--text); line-height: 1.65; }
+
+  .q-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1.5rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  .btn-submit {
+    background: var(--navy);
+    color: var(--white);
+    border: none;
+    padding: 10px 28px;
+    border-radius: var(--radius);
+    font-family: var(--font-sans);
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.15s;
+  }
+  .btn-submit:hover { background: var(--navy-light); }
+  .btn-submit:disabled { opacity: 0.4; cursor: default; }
+  .btn-next {
+    background: var(--gold);
+    color: var(--navy);
+    border: none;
+    padding: 10px 28px;
+    border-radius: var(--radius);
+    font-family: var(--font-sans);
+    font-size: 0.9rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.15s;
+  }
+  .btn-next:hover { background: var(--gold-light); }
+  .q-flag {
+    background: none;
+    border: 1px solid var(--border);
+    color: var(--text-muted);
+    padding: 8px 16px;
+    border-radius: var(--radius);
+    font-size: 0.8rem;
+    cursor: pointer;
+    font-family: var(--font-sans);
+    transition: border-color 0.15s, color 0.15s;
+  }
+  .q-flag:hover { border-color: var(--gold); color: var(--gold); }
+
+  /* RESULTS */
+  .results-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 2.5rem;
+    text-align: center;
+    margin-bottom: 1.5rem;
+  }
+  .score-circle {
+    width: 120px; height: 120px;
+    border-radius: 50%;
+    background: var(--navy);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+  }
+  .score-circle .pct { font-family: var(--font-serif); font-size: 2rem; color: var(--gold); }
+  .score-circle .lbl { font-size: 0.7rem; color: rgba(255,255,255,0.6); letter-spacing: 0.08em; }
+  .results-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin: 1.5rem 0;
+  }
+  .result-item {
+    background: var(--bg);
+    border-radius: var(--radius);
+    padding: 1rem;
+  }
+  .result-item .val { font-family: var(--font-serif); font-size: 1.5rem; font-weight: 400; }
+  .result-item .lbl { font-size: 0.75rem; color: var(--text-muted); margin-top: 3px; }
+  .result-item.correct .val { color: var(--green); }
+  .result-item.incorrect .val { color: var(--red); }
+  .result-item.skipped .val { color: var(--text-muted); }
+
+  /* DOMAIN BREAKDOWN */
+  .domain-bar { margin: 0.6rem 0; }
+  .domain-bar-label {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.8rem;
+    margin-bottom: 4px;
+    color: var(--text);
+  }
+  .domain-bar-track {
+    height: 8px;
+    background: var(--border);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+  .domain-bar-fill {
+    height: 100%;
+    border-radius: 4px;
+    background: var(--teal);
+  }
+
+  /* FOOTER */
+  footer {
+    background: var(--navy);
+    color: rgba(255,255,255,0.6);
+    text-align: center;
+    padding: 2rem;
+    font-size: 0.8rem;
+    margin-top: 4rem;
+  }
+  footer strong { color: var(--gold); }
+
+  /* FAQ */
+  .faq-item {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    margin-bottom: 10px;
+    overflow: hidden;
+  }
+  .faq-q {
+    width: 100%;
+    background: none;
+    border: none;
+    padding: 1.1rem 1.5rem;
+    text-align: left;
+    font-family: var(--font-sans);
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text);
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    transition: background 0.12s;
+  }
+  .faq-q:hover { background: var(--bg); }
+  .faq-q .arrow { font-size: 1rem; color: var(--text-muted); transition: transform 0.2s; flex-shrink: 0; }
+  .faq-q.open .arrow { transform: rotate(180deg); }
+  .faq-a {
+    display: none;
+    padding: 0 1.5rem 1.25rem;
+    font-size: 0.875rem;
+    color: var(--text-muted);
+    line-height: 1.7;
+  }
+  .faq-a.open { display: block; }
+
+  @media (max-width: 700px) {
+    .results-grid { grid-template-columns: 1fr 1fr; }
+    .hero-stats { gap: 2rem; }
+    .nav-links .hide-mobile { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <a class="nav-logo" href="#" onclick="showPage('home')">
+    FRCEM <span>SBA</span>
+    <div class="nav-pill">Mastery</div>
+  </a>
+  <div class="nav-links">
+    <button class="hide-mobile active" onclick="showPage('home');setActive(this)">Dashboard</button>
+    <button class="hide-mobile" onclick="showPage('study');setActive(this)">Study Modules</button>
+    <button onclick="showPage('mock');setActive(this)">Mock Test</button>
+    <button class="nav-cta" onclick="showPage('premium');setActive(this)">Go Premium</button>
+  </div>
+</nav>
+
+<!-- HOME PAGE -->
+<div id="page-home" class="page active">
+
+  <div class="hero">
+    <div class="hero-badge">🏥 RCEM 2021 Curriculum Aligned</div>
+    <h1>Master the FRCEM SBA with <em>Confidence</em></h1>
+    <p>Structured preparation aligned to every Specialty Learning Outcome. Practice thousands of SBA questions, take timed mock exams, and track your progress towards consultant-level emergency medicine.</p>
+    <div class="hero-actions">
+      <button class="btn-primary" onclick="showPage('mock');setActiveNav('mock')">Start Mock Test</button>
+      <button class="btn-outline" onclick="showPage('study');setActiveNav('study')">Browse Study Modules</button>
+    </div>
+    <div class="hero-stats">
+      <div class="hero-stat"><span class="num">180</span><span class="lbl">Questions per exam</span></div>
+      <div class="hero-stat"><span class="num">7</span><span class="lbl">Core SLOs covered</span></div>
+      <div class="hero-stat"><span class="num">2×90</span><span class="lbl">Minute papers</span></div>
+      <div class="hero-stat"><span class="num">2026</span><span class="lbl">Exam dates available</span></div>
+    </div>
+  </div>
+
+  <div class="container">
+
+    <!-- Exam Dates Banner -->
+    <div class="exam-banner">
+      <div>
+        <h3>📅 2026 Exam Dates</h3>
+        <p>Plan your preparation around official RCEM examination windows</p>
+      </div>
+      <div class="exam-dates">
+        <div class="exam-date-item">
+          <span class="date-val">20 May 2026</span>
+          <div class="date-lbl">Next exam</div>
+          <div class="date-lbl" style="color:rgba(255,255,255,0.35); margin-top:2px;">Results: 24 Jun 2026</div>
+        </div>
+        <div class="exam-date-item">
+          <span class="date-val">7 Oct 2026</span>
+          <div class="date-lbl">Second sitting</div>
+          <div class="date-lbl" style="color:rgba(255,255,255,0.35); margin-top:2px;">Results: 11 Nov 2026</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Progress Stats -->
+    <div class="stats-bar" style="border:1px solid var(--border); border-radius: var(--radius-lg); margin-bottom:2.5rem; padding: 1.25rem 1.5rem; display:flex; gap:1rem; flex-wrap:wrap;">
+      <div class="stat-card"><span class="value">0</span><div class="label">Questions answered</div></div>
+      <div class="stat-card"><span class="value">0%</span><div class="label">Avg. score</div></div>
+      <div class="stat-card highlight"><span class="value">0</span><div class="label">Mocks completed</div></div>
+      <div class="stat-card"><span class="value">0</span><div class="label">Hours studied</div></div>
+    </div>
+
+    <!-- SLO Quick Start -->
+    <h2 class="section-title">Specialty Learning Outcomes</h2>
+    <p class="section-sub">Click any module to start practising. All modules are blueprinted to the RCEM 2021 curriculum.</p>
+
+    <div class="slo-grid">
+
+      <div class="slo-card" style="--card-accent:#1d7c6e; --card-bg:#e6f4f2; --card-color:#1d7c6e;" onclick="showPage('mock');setActiveNav('mock')">
+        <div class="slo-header">
+          <div class="slo-tag">SLO1</div>
+          <div class="slo-badge">~40 Qs</div>
+        </div>
+        <h3>Care for Physiologically Stable Patients</h3>
+        <p>Assessment and management of common stable presentations in the ED — minor injuries, infections, and stable chronic disease.</p>
+        <div class="slo-progress-wrap">
+          <div class="slo-progress-top"><span>Progress</span><span>0 / 40</span></div>
+          <div class="progress-bar"><div class="progress-fill" style="width:0%"></div></div>
+        </div>
+        <div class="slo-footer">
+          <div class="slo-counts">
+            <div class="slo-count"><strong>40</strong> questions</div>
+            <div class="slo-count"><strong>Free + Paid</strong></div>
+          </div>
+          <button class="btn-sm">Start ›</button>
+        </div>
+      </div>
+
+      <div class="slo-card" style="--card-accent:#c0392b; --card-bg:#fdf0ee; --card-color:#c0392b;" onclick="showPage('mock');setActiveNav('mock')">
+        <div class="slo-header">
+          <div class="slo-tag" style="background:#fdf0ee; color:#c0392b;">SLO5</div>
+          <div class="slo-badge">~30 Qs</div>
+        </div>
+        <h3>Care for Injured Patients — Trauma</h3>
+        <p>High-yield trauma module covering primary survey, polytrauma, regional injuries, burns, and advanced imaging interpretation.</p>
+        <div class="slo-progress-wrap">
+          <div class="slo-progress-top"><span>Progress</span><span>0 / 30</span></div>
+          <div class="progress-bar"><div class="progress-fill" style="width:0%; background:#c0392b"></div></div>
+        </div>
+        <div class="slo-footer">
+          <div class="slo-counts">
+            <div class="slo-count"><strong>30</strong> questions</div>
+            <div class="slo-count"><strong>Free + Paid</strong></div>
+          </div>
+          <button class="btn-sm" style="background:#c0392b;">Start ›</button>
+        </div>
+      </div>
+
+      <div class="slo-card" style="--card-accent:#7c3aed; --card-bg:#f3f0ff; --card-color:#7c3aed;" onclick="showPage('mock');setActiveNav('mock')">
+        <div class="slo-header">
+          <div class="slo-tag" style="background:#f3f0ff; color:#7c3aed;">SLO7</div>
+          <div class="slo-badge">~20 Qs</div>
+        </div>
+        <h3>Managing Complex &amp; Challenging Situations</h3>
+        <p>Advanced clinical decision-making, ethical dilemmas, and difficult patient interactions requiring consultant-level judgement.</p>
+        <div class="slo-progress-wrap">
+          <div class="slo-progress-top"><span>Progress</span><span>0 / 20</span></div>
+          <div class="progress-bar"><div class="progress-fill" style="width:0%; background:#7c3aed"></div></div>
+        </div>
+        <div class="slo-footer">
+          <div class="slo-counts">
+            <div class="slo-count"><strong>20</strong> questions</div>
+            <div class="slo-count"><strong>Paid</strong></div>
+          </div>
+          <button class="btn-sm" style="background:#7c3aed;">Start ›</button>
+        </div>
+      </div>
+
+      <div class="slo-card" style="--card-accent:#0a1628; --card-bg:#f0f4f8; --card-color:#0a1628;" onclick="showPage('mock');setActiveNav('mock')">
+        <div class="slo-header">
+          <div class="slo-tag">SLO9</div>
+          <div class="slo-badge">~15 Qs</div>
+        </div>
+        <h3>Leadership &amp; Effective Teamwork</h3>
+        <p>Communication, team roles, multidisciplinary working, and leadership in the emergency department setting.</p>
+        <div class="slo-progress-wrap">
+          <div class="slo-progress-top"><span>Progress</span><span>0 / 15</span></div>
+          <div class="progress-bar"><div class="progress-fill" style="width:0%"></div></div>
+        </div>
+        <div class="slo-footer">
+          <div class="slo-counts">
+            <div class="slo-count"><strong>15</strong> questions</div>
+            <div class="slo-count"><strong>Paid</strong></div>
+          </div>
+          <button class="btn-sm">Start ›</button>
+        </div>
+      </div>
+
+      <div class="slo-card" style="--card-accent:#c9a227; --card-bg:#fdf6e3; --card-color:#8a6e00;" onclick="showPage('study');setActiveNav('study')">
+        <div class="slo-header">
+          <div class="slo-tag" style="background:#fdf6e3; color:#8a6e00;">SLO10 &amp; 11</div>
+          <div class="slo-badge">~25 Qs</div>
+        </div>
+        <h3>Critical Appraisal &amp; Quality Improvement</h3>
+        <p>Statistics, evidence-based medicine, research methodology, QIP principles — often underestimated but frequently tested.</p>
+        <div class="slo-progress-wrap">
+          <div class="slo-progress-top"><span>Progress</span><span>0 / 25</span></div>
+          <div class="progress-bar"><div class="progress-fill" style="width:0%; background:#c9a227"></div></div>
+        </div>
+        <div class="slo-footer">
+          <div class="slo-counts">
+            <div class="slo-count"><strong>25</strong> questions</div>
+            <div class="slo-count"><strong>Free + Paid</strong></div>
+          </div>
+          <button class="btn-sm" style="background:#c9a227; color: #0a1628;">Start ›</button>
+        </div>
+      </div>
+
+      <div class="slo-card" style="--card-accent:#1a6b3c; --card-bg:#eaf4ee; --card-color:#1a6b3c;" onclick="showPage('mock');setActiveNav('mock')">
+        <div class="slo-header">
+          <div class="slo-tag" style="background:#eaf4ee; color:#1a6b3c;">SLO12</div>
+          <div class="slo-badge">~15 Qs</div>
+        </div>
+        <h3>Management &amp; Leadership in ED</h3>
+        <p>Administrative, managerial, governance and leadership competencies expected at consultant level in emergency care settings.</p>
+        <div class="slo-progress-wrap">
+          <div class="slo-progress-top"><span>Progress</span><span>0 / 15</span></div>
+          <div class="progress-bar"><div class="progress-fill" style="width:0%; background:#1a6b3c"></div></div>
+        </div>
+        <div class="slo-footer">
+          <div class="slo-counts">
+            <div class="slo-count"><strong>15</strong> questions</div>
+            <div class="slo-count"><strong>Paid</strong></div>
+          </div>
+          <button class="btn-sm" style="background:#1a6b3c;">Start ›</button>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- FAQ -->
+    <h2 class="section-title">Frequently Asked Questions</h2>
+    <p class="section-sub" style="margin-bottom:1.5rem;">Everything you need to know about the FRCEM SBA examination</p>
+
+    <div id="faq-section">
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">What is the FRCEM SBA exam? <span class="arrow">▾</span></button>
+        <div class="faq-a">The FRCEM SBA (Single Best Answer) exam is a written examination assessing theoretical knowledge and clinical expertise in emergency medicine. It replaced the FRCEM Final SAQ exam from August 2021 and is blueprinted against the RCEM 2021 Emergency Medicine curriculum.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">How is the exam structured? <span class="arrow">▾</span></button>
+        <div class="faq-a">The exam consists of 180 multiple-choice questions divided into two 90-minute papers. Questions cover the full range of RCEM 2021 curriculum SLOs including clinical management, critical appraisal, quality improvement, and leadership.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">Do I need to pass both the SBA and OSCE? <span class="arrow">▾</span></button>
+        <div class="faq-a">Yes. Both the FRCEM SBA and FRCEM OSCE must be passed independently to achieve FRCEM certification. There is no cross-compensation between components and both must be completed within seven years of each other. Candidates may sit them in any order.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">What are the 2026 application windows? <span class="arrow">▾</span></button>
+        <div class="faq-a">For the 20 May 2026 exam, the application window is 18–25 February 2026 (results 24 June 2026). For the 7 October 2026 exam, the application window is 1–8 July 2026 (results 11 November 2026). Always check the official RCEM website for the most up-to-date information.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">What SLOs are most heavily examined? <span class="arrow">▾</span></button>
+        <div class="faq-a">SLO5 (Injured Patients / Trauma) often comprises around 30 questions and is a high-yield area. SLO1 (Stable Patients) is also heavily represented. Non-clinical SLOs such as SLO10/11 (Critical Appraisal & QIP) are frequently underestimated but are regularly tested.</div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>
+    <strong>FRCEM SBA Mastery</strong> · Aligned to the RCEM 2021 Emergency Medicine Curriculum · Not affiliated with RCEM
+  </footer>
+</div>
+
+<!-- STUDY PAGE -->
+<div id="page-study" class="page">
+  <div class="container">
+    <h2 class="section-title" style="margin-top:1rem;">Study Modules — Free vs Premium</h2>
+    <p class="section-sub">Our blended learning approach offers free introductory content and an in-depth premium subscription</p>
+
+    <div class="tier-grid">
+      <div class="tier-card">
+        <div class="tier-header">
+          <div class="tier-icon" style="background:#f0f4f8;">📖</div>
+          <div>
+            <h3>Free Access</h3>
+            <div class="price">No cost — start today</div>
+          </div>
+        </div>
+        <ul class="feature-list">
+          <li><span class="feat-tick">✓</span> Sample SBA questions from all SLOs</li>
+          <li><span class="feat-tick">✓</span> Introductory articles on core EM topics</li>
+          <li><span class="feat-tick">✓</span> Basic ALS &amp; BLS algorithms</li>
+          <li><span class="feat-tick">✓</span> Intro to trauma (primary/secondary survey)</li>
+          <li><span class="feat-tick">✓</span> Basic statistical concepts &amp; study types</li>
+          <li><span class="feat-tick">✓</span> Quick guides on paediatric emergencies</li>
+          <li><span class="feat-tick">✓</span> Official RCEM curriculum links</li>
+          <li><span class="feat-tick">✓</span> Free diagnostic quiz (25 questions)</li>
+          <li><span class="feat-cross">✗</span> Full question bank (1000+ questions)</li>
+          <li><span class="feat-cross">✗</span> Video webinars &amp; lectures</li>
+          <li><span class="feat-cross">✗</span> Detailed performance analytics</li>
+          <li><span class="feat-cross">✗</span> Full mock exams (180 Qs timed)</li>
+        </ul>
+      </div>
+
+      <div class="tier-card premium">
+        <div class="tier-header">
+          <div class="tier-icon" style="background:rgba(201,162,39,0.2);">⭐</div>
+          <div>
+            <h3>Premium Subscription</h3>
+            <div class="price" style="color: var(--gold);">Full access — upgrade to unlock</div>
+          </div>
+        </div>
+        <ul class="feature-list">
+          <li><span class="feat-tick">✓</span> Full question bank — thousands of FRCEM-style SBAs</li>
+          <li><span class="feat-tick">✓</span> Detailed explanations for all correct &amp; incorrect answers</li>
+          <li><span class="feat-tick">✓</span> In-depth SLO modules with advanced clinical scenarios</li>
+          <li><span class="feat-tick">✓</span> Video webinars from EM consultants</li>
+          <li><span class="feat-tick">✓</span> Full timed mock exams (2 × 90 min, 180 Qs)</li>
+          <li><span class="feat-tick">✓</span> Performance analytics by SLO &amp; clinical theme</li>
+          <li><span class="feat-tick">✓</span> Study guides, revision notes &amp; mnemonics</li>
+          <li><span class="feat-tick">✓</span> Personalised study plan &amp; progress tracking</li>
+          <li><span class="feat-tick">✓</span> Community forum &amp; peer discussion groups</li>
+          <li><span class="feat-tick">✓</span> Image-based questions (ECGs, X-rays, CT scans)</li>
+          <li><span class="feat-tick">✓</span> Advanced CA&amp;QIP modules (NNT, ARR, LRs)</li>
+          <li><span class="feat-tick">✓</span> 50% guarantee discount if you don't pass*</li>
+        </ul>
+        <button class="btn-primary" style="width:100%; margin-top:1.25rem; padding:14px;" onclick="showPage('premium');setActiveNav('premium')">Upgrade to Premium →</button>
+      </div>
+    </div>
+
+    <p style="font-size:0.75rem; color:var(--text-muted); margin-top:-1rem;">* 50% discount on a subsequent course if you attend the full-price two-day course and do not pass your FRCEM Final SBA. Terms apply.</p>
+  </div>
+</div>
+
+<!-- MOCK TEST PAGE -->
+<div id="page-mock" class="page">
+  <div class="mock-page">
+    <div id="mock-start-screen">
+      <div style="text-align:center; padding: 3rem 1rem;">
+        <h2 style="font-family: var(--font-serif); font-size:2rem; color:var(--navy); margin-bottom:1rem;">FRCEM SBA Practice Mock</h2>
+        <p style="color:var(--text-muted); max-width:480px; margin:0 auto 2rem; line-height:1.7;">A timed, exam-style session of 5 sample questions. In a full mock you would face 90 questions per paper (180 total) across a 90-minute sitting.</p>
+        <div style="display:flex; gap:1rem; justify-content:center; flex-wrap:wrap; margin-bottom:2rem;">
+          <div style="background:var(--white); border:1px solid var(--border); border-radius:var(--radius); padding:1rem 1.5rem; text-align:center; min-width:120px;">
+            <div style="font-family:var(--font-serif); font-size:1.5rem; color:var(--navy);">5</div>
+            <div style="font-size:0.75rem; color:var(--text-muted);">Questions</div>
+          </div>
+          <div style="background:var(--white); border:1px solid var(--border); border-radius:var(--radius); padding:1rem 1.5rem; text-align:center; min-width:120px;">
+            <div style="font-family:var(--font-serif); font-size:1.5rem; color:var(--navy);">5 min</div>
+            <div style="font-size:0.75rem; color:var(--text-muted);">Time limit</div>
+          </div>
+          <div style="background:var(--white); border:1px solid var(--border); border-radius:var(--radius); padding:1rem 1.5rem; text-align:center; min-width:120px;">
+            <div style="font-family:var(--font-serif); font-size:1.5rem; color:var(--navy);">SBA</div>
+            <div style="font-size:0.75rem; color:var(--text-muted);">Format</div>
+          </div>
+        </div>
+        <button class="btn-primary" style="font-size:1rem; padding:14px 40px;" onclick="startMock()">Begin Mock Test →</button>
+      </div>
+    </div>
+
+    <div id="mock-question-screen" style="display:none;">
+      <div class="mock-header">
+        <div>
+          <h2>FRCEM SBA Practice</h2>
+          <div style="font-size:0.8rem; color:var(--text-muted); margin-top:3px;">Answer the single best option from the five choices</div>
+        </div>
+        <div class="mock-meta">
+          <div class="mock-chip" id="slo-indicator">SLO1</div>
+          <div class="timer-chip" id="timer-display">05:00</div>
+        </div>
+      </div>
+
+      <div class="q-counter">
+        <span id="q-label">Question 1 of 5</span>
+        <span id="q-score-live" style="color:var(--text-muted);">Score: 0</span>
+      </div>
+      <div class="q-progress">
+        <div class="q-progress-fill" id="q-progress-fill" style="width:0%"></div>
+      </div>
+
+      <div class="question-card" id="question-card">
+        <div class="q-slo-tag" id="q-slo-tag">SLO1 — Stable Patients</div>
+        <h3 id="q-text"></h3>
+        <ul class="options-list" id="options-list"></ul>
+        <div class="explanation-box" id="explanation-box">
+          <h4>Explanation</h4>
+          <p id="explanation-text"></p>
+        </div>
+      </div>
+
+      <div class="q-actions">
+        <button class="q-flag" id="flag-btn" onclick="flagQuestion()">⚑ Flag for review</button>
+        <div style="display:flex; gap:10px;">
+          <button class="btn-submit" id="submit-btn" onclick="submitAnswer()" disabled>Submit Answer</button>
+          <button class="btn-next" id="next-btn" onclick="nextQuestion()" style="display:none;">Next →</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="mock-results-screen" style="display:none;">
+      <div class="results-card">
+        <div class="score-circle">
+          <span class="pct" id="final-pct">0%</span>
+          <span class="lbl">SCORE</span>
+        </div>
+        <h2 style="font-family:var(--font-serif); font-size:1.6rem; color:var(--navy); margin-bottom:0.5rem;" id="results-headline">Results</h2>
+        <p style="color:var(--text-muted); font-size:0.9rem;" id="results-sub">Here's how you performed</p>
+        <div class="results-grid">
+          <div class="result-item correct"><div class="val" id="res-correct">0</div><div class="lbl">Correct</div></div>
+          <div class="result-item incorrect"><div class="val" id="res-incorrect">0</div><div class="lbl">Incorrect</div></div>
+          <div class="result-item skipped"><div class="val" id="res-skipped">0</div><div class="lbl">Unanswered</div></div>
+        </div>
+      </div>
+
+      <div style="background:var(--white); border:1px solid var(--border); border-radius:var(--radius-lg); padding:1.5rem 2rem; margin-bottom:1.5rem;">
+        <h3 style="font-size:1rem; font-weight:600; color:var(--navy); margin-bottom:1.25rem;">Performance by Domain</h3>
+        <div id="domain-results"></div>
+      </div>
+
+      <div style="display:flex; gap:12px; flex-wrap:wrap;">
+        <button class="btn-primary" style="flex:1; padding:12px;" onclick="startMock()">Retake Mock →</button>
+        <button class="btn-outline" style="flex:1; padding:12px; background:var(--white); color:var(--navy); border-color:var(--border);" onclick="showPage('study');setActiveNav('study')">Study Weak Areas</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PREMIUM PAGE -->
+<div id="page-premium" class="page">
+  <div class="container">
+    <div style="text-align:center; padding: 3rem 0 2rem;">
+      <h2 class="section-title">Unlock Your Full Potential</h2>
+      <p class="section-sub" style="max-width:500px; margin:0 auto 2rem;">Premium access gives you everything you need to pass the FRCEM SBA — from thousands of exam-style questions to personal analytics and live webinars from EM consultants.</p>
+      <div style="background: var(--navy); color:var(--white); border-radius: var(--radius-lg); padding: 2.5rem; max-width: 480px; margin: 0 auto; text-align:left;">
+        <div style="font-family: var(--font-serif); font-size: 0.85rem; color:var(--gold); letter-spacing:0.1em; text-transform:uppercase; margin-bottom:1rem;">Premium Subscription</div>
+        <div style="font-family: var(--font-serif); font-size: 3rem; color: var(--white); margin-bottom: 0.25rem;">Full Access</div>
+        <p style="color:rgba(255,255,255,0.6); font-size:0.875rem; margin-bottom:2rem;">Everything you need to pass the FRCEM SBA exam</p>
+        <ul style="list-style:none; margin-bottom:2rem;">
+          <li style="padding:8px 0; border-bottom:1px solid rgba(255,255,255,0.1); font-size:0.875rem; color:rgba(255,255,255,0.85);">✓ &nbsp;Full question bank — 1000+ SBA questions</li>
+          <li style="padding:8px 0; border-bottom:1px solid rgba(255,255,255,0.1); font-size:0.875rem; color:rgba(255,255,255,0.85);">✓ &nbsp;Full timed mocks (2 × 90 min papers)</li>
+          <li style="padding:8px 0; border-bottom:1px solid rgba(255,255,255,0.1); font-size:0.875rem; color:rgba(255,255,255,0.85);">✓ &nbsp;Video lectures from EM consultants</li>
+          <li style="padding:8px 0; border-bottom:1px solid rgba(255,255,255,0.1); font-size:0.875rem; color:rgba(255,255,255,0.85);">✓ &nbsp;Performance analytics by SLO</li>
+          <li style="padding:8px 0; border-bottom:1px solid rgba(255,255,255,0.1); font-size:0.875rem; color:rgba(255,255,255,0.85);">✓ &nbsp;Personalised study plan</li>
+          <li style="padding:8px 0; font-size:0.875rem; color:rgba(255,255,255,0.85);">✓ &nbsp;50% pass guarantee discount</li>
+        </ul>
+        <button class="btn-primary" style="width:100%; padding:14px; font-size:1rem;">Get Premium Access →</button>
+        <p style="text-align:center; font-size:0.75rem; color:rgba(255,255,255,0.4); margin-top:1rem;">Cancel anytime · No long-term commitment</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  // ── Navigation ──────────────────────────────────────────────
+  function showPage(id) {
+    document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+    document.getElementById('page-' + id).classList.add('active');
+  }
+  function setActive(btn) {
+    document.querySelectorAll('.nav-links button').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+  }
+  function setActiveNav(id) {
+    const map = { home: 0, study: 1, mock: 2, premium: 3 };
+    const btns = document.querySelectorAll('.nav-links button');
+    btns.forEach(b => b.classList.remove('active'));
+    if (map[id] !== undefined) btns[map[id]].classList.add('active');
+  }
+  function toggleFaq(btn) {
+    const ans = btn.nextElementSibling;
+    btn.classList.toggle('open');
+    ans.classList.toggle('open');
+  }
+
+  // ── Question Bank ────────────────────────────────────────────
+  const QUESTIONS = [
+    {
+      slo: 'SLO1', sloLabel: 'SLO1 — Stable Patients',
+      text: 'A 45-year-old male presents to the ED with a 3-day history of worsening right lower quadrant pain, anorexia, and low-grade fever (37.8°C). He is haemodynamically stable. Examination reveals localised tenderness with guarding at McBurney\'s point. Which is the SINGLE BEST initial investigation?',
+      options: ['A. Erect chest X-ray', 'B. CT abdomen and pelvis with contrast', 'C. Urine dipstick and beta-hCG', 'D. Serum amylase and lipase', 'E. Abdominal ultrasound'],
+      correct: 1,
+      explanation: 'CT abdomen and pelvis with contrast is the most sensitive and specific initial investigation for suspected appendicitis in adults (sensitivity ~94%, specificity ~95%). It aids diagnosis and excludes alternative pathology. Ultrasound is first-line in children and pregnant women to avoid radiation.'
+    },
+    {
+      slo: 'SLO5', sloLabel: 'SLO5 — Injured Patients',
+      text: 'A 28-year-old motorcyclist is brought in following a high-speed RTC. Primary survey reveals airway intact, GCS 14, RR 28, HR 118, BP 94/60 mmHg, SpO₂ 91% on 15L O₂. Trachea is deviated to the left and breath sounds are absent on the right. What is the MOST APPROPRIATE immediate management?',
+      options: ['A. Urgent chest X-ray to confirm diagnosis', 'B. CT thorax to characterise injury', 'C. Needle decompression of the right 2nd intercostal space, midclavicular line', 'D. Insert a chest drain in the right 5th intercostal space immediately', 'E. Intubate and ventilate the patient first'],
+      correct: 2,
+      explanation: 'This presentation is consistent with a tension pneumothorax (tracheal deviation away, absent breath sounds, haemodynamic compromise). Tension pneumothorax is a clinical diagnosis requiring immediate needle decompression — do NOT delay for imaging. Needle decompression at the 2nd ICS MCL is the immediate life-saving intervention, followed by definitive chest drain insertion.'
+    },
+    {
+      slo: 'SLO10', sloLabel: 'SLO10 — Critical Appraisal',
+      text: 'A study comparing a new point-of-care troponin assay to standard laboratory troponin reports a sensitivity of 96% and specificity of 82% for NSTEMI. The prevalence of NSTEMI in the ED population studied is 15%. Using Bayes\' theorem, what is the APPROXIMATE positive predictive value (PPV) of the new assay?',
+      options: ['A. 96%', 'B. 82%', 'C. 50%', 'D. 44%', 'E. 15%'],
+      correct: 2,
+      explanation: 'PPV depends on both test performance AND disease prevalence. With 15% prevalence, sensitivity 96%, specificity 82%: True positives ≈ 96 per 1000 (of 150 cases); False positives ≈ 153 per 1000 (of 850 non-cases × 18%). PPV = 96/(96+153) ≈ 39–44%. This illustrates why a test with excellent sensitivity and specificity still has limited PPV in lower-prevalence populations — a key concept for the FRCEM SBA.'
+    },
+    {
+      slo: 'SLO7', sloLabel: 'SLO7 — Complex Situations',
+      text: 'A 72-year-old woman with capacity is brought to the ED following a fall. She has a neck of femur fracture confirmed on X-ray and requires operative fixation. She clearly states she refuses surgery. Her family insist she "isn\'t herself" and push for surgical consent. What is the MOST APPROPRIATE course of action?',
+      options: ['A. Contact the next of kin to consent on her behalf', 'B. Formally assess her mental capacity for this decision and document findings', 'C. Proceed with surgery as it is clearly in her best interests', 'D. Seek a court order for treatment', 'E. Discharge her home with analgesia as she has refused'],
+      correct: 1,
+      explanation: 'The Mental Capacity Act 2005 requires a formal, decision-specific capacity assessment before any assumption is made. An adult is presumed to have capacity unless proven otherwise. Family members cannot consent for a capacitous adult. If capacity is confirmed, the patient\'s refusal must be respected even if potentially life-limiting. If she lacks capacity, a best interests decision (not family consent) must be made by the treating team.'
+    },
+    {
+      slo: 'SLO11', sloLabel: 'SLO11 — Quality Improvement',
+      text: 'An ED is undertaking a Quality Improvement Project (QIP) to reduce the time to analgesia for patients presenting with renal colic. Which quality improvement methodology involves iterative cycles of "Plan, Do, Study, Act" to test small changes before wider implementation?',
+      options: ['A. Six Sigma', 'B. Root Cause Analysis (RCA)', 'C. PDSA cycles', 'D. Lean methodology', 'E. Significant Event Analysis (SEA)'],
+      correct: 2,
+      explanation: 'PDSA (Plan-Do-Study-Act) cycles are the foundation of iterative quality improvement. Small changes are planned, tested in a limited way, their effect is studied, and the process is then adapted before scaling up. This is distinct from Lean (waste reduction), Six Sigma (variation reduction), RCA (retrospective cause analysis), or SEA (reflective learning from single events). PDSA is central to QIP methodology tested in the FRCEM SBA.'
+    }
+  ];
+
+  // ── Mock Test Logic ──────────────────────────────────────────
+  let currentQ = 0;
+  let selectedOption = null;
+  let answered = false;
+  let score = 0;
+  let timerInterval = null;
+  let secondsLeft = 300;
+  let results = [];
+
+  function startMock() {
+    currentQ = 0; selectedOption = null; answered = false; score = 0;
+    secondsLeft = 300; results = [];
+    document.getElementById('mock-start-screen').style.display = 'none';
+    document.getElementById('mock-results-screen').style.display = 'none';
+    document.getElementById('mock-question-screen').style.display = 'block';
+    clearInterval(timerInterval);
+    timerInterval = setInterval(tickTimer, 1000);
+    renderQuestion();
+  }
+
+  function tickTimer() {
+    secondsLeft--;
+    const m = Math.floor(secondsLeft / 60).toString().padStart(2,'0');
+    const s = (secondsLeft % 60).toString().padStart(2,'0');
+    document.getElementById('timer-display').textContent = m + ':' + s;
+    if (secondsLeft <= 0) { clearInterval(timerInterval); showResults(); }
+  }
+
+  function renderQuestion() {
+    const q = QUESTIONS[currentQ];
+    document.getElementById('q-label').textContent = 'Question ' + (currentQ+1) + ' of ' + QUESTIONS.length;
+    document.getElementById('q-score-live').textContent = 'Score: ' + score;
+    document.getElementById('q-progress-fill').style.width = (currentQ / QUESTIONS.length * 100) + '%';
+    document.getElementById('q-slo-tag').textContent = q.sloLabel;
+    document.getElementById('slo-indicator').textContent = q.slo;
+    document.getElementById('q-text').textContent = q.text;
+    document.getElementById('explanation-box').classList.remove('show');
+    selectedOption = null; answered = false;
+    document.getElementById('submit-btn').disabled = true;
+    document.getElementById('submit-btn').style.display = '';
+    document.getElementById('next-btn').style.display = 'none';
+    document.getElementById('flag-btn').textContent = '⚑ Flag for review';
+
+    const ol = document.getElementById('options-list');
+    ol.innerHTML = '';
+    q.options.forEach((opt, i) => {
+      const li = document.createElement('li');
+      const btn = document.createElement('button');
+      btn.className = 'option-btn';
+      btn.innerHTML = '<span class="opt-letter">' + String.fromCharCode(65+i) + '</span>' + opt.substring(3);
+      btn.onclick = () => selectOption(i, btn);
+      li.appendChild(btn);
+      ol.appendChild(li);
+    });
+  }
+
+  function selectOption(i, btn) {
+    if (answered) return;
+    selectedOption = i;
+    document.querySelectorAll('.option-btn').forEach(b => b.classList.remove('selected'));
+    btn.classList.add('selected');
+    document.getElementById('submit-btn').disabled = false;
+  }
+
+  function submitAnswer() {
+    if (selectedOption === null || answered) return;
+    answered = true;
+    const q = QUESTIONS[currentQ];
+    const btns = document.querySelectorAll('.option-btn');
+    btns.forEach(b => b.disabled = true);
+    btns[q.correct].classList.add('correct');
+    if (selectedOption !== q.correct) {
+      btns[selectedOption].classList.remove('selected');
+      btns[selectedOption].classList.add('incorrect');
+    } else {
+      score++;
+    }
+    document.getElementById('q-score-live').textContent = 'Score: ' + score;
+    document.getElementById('explanation-text').textContent = q.explanation;
+    document.getElementById('explanation-box').classList.add('show');
+    document.getElementById('submit-btn').style.display = 'none';
+    document.getElementById('next-btn').style.display = '';
+    results.push({ correct: selectedOption === q.correct, slo: q.slo });
+  }
+
+  function flagQuestion() {
+    const btn = document.getElementById('flag-btn');
+    btn.textContent = btn.textContent.includes('⚑') ? '⚑ Flagged' : '⚑ Flag for review';
+    btn.style.borderColor = btn.textContent.includes('Flagged') ? 'var(--gold)' : '';
+    btn.style.color = btn.textContent.includes('Flagged') ? 'var(--gold)' : '';
+  }
+
+  function nextQuestion() {
+    currentQ++;
+    if (currentQ >= QUESTIONS.length) { clearInterval(timerInterval); showResults(); }
+    else renderQuestion();
+  }
+
+  function showResults() {
+    document.getElementById('mock-question-screen').style.display = 'none';
+    document.getElementById('mock-results-screen').style.display = 'block';
+    const total = QUESTIONS.length;
+    const correct = results.filter(r => r.correct).length;
+    const incorrect = results.filter(r => !r.correct).length;
+    const skipped = total - results.length;
+    const pct = Math.round(correct / total * 100);
+    document.getElementById('final-pct').textContent = pct + '%';
+    document.getElementById('res-correct').textContent = correct;
+    document.getElementById('res-incorrect').textContent = incorrect;
+    document.getElementById('res-skipped').textContent = skipped;
+    const headline = pct >= 70 ? '🎉 Well done!' : pct >= 50 ? 'Good effort — keep going' : 'Keep practising';
+    const sub = pct >= 70 ? 'A strong performance. Review explanations to consolidate your knowledge.' : 'Review the explanations carefully and revisit the relevant SLO modules.';
+    document.getElementById('results-headline').textContent = headline;
+    document.getElementById('results-sub').textContent = sub;
+
+    const domainEl = document.getElementById('domain-results');
+    domainEl.innerHTML = '';
+    const slos = ['SLO1','SLO5','SLO7','SLO10','SLO11'];
+    slos.forEach(slo => {
+      const sloResults = results.filter(r => r.slo === slo);
+      const sloTotal = QUESTIONS.filter(q => q.slo === slo).length;
+      const sloCorrect = sloResults.filter(r => r.correct).length;
+      const sloPct = sloTotal > 0 ? Math.round(sloCorrect / sloTotal * 100) : 0;
+      domainEl.innerHTML += `
+        <div class="domain-bar">
+          <div class="domain-bar-label"><span>${slo}</span><span style="font-weight:600;">${sloCorrect}/${sloTotal} (${sloPct}%)</span></div>
+          <div class="domain-bar-track"><div class="domain-bar-fill" style="width:${sloPct}%; background:${sloPct>=70?'var(--teal)':sloPct>=50?'var(--gold)':'var(--red)'}"></div></div>
+        </div>`;
+    });
+  }
+</script>
+</body>
+</html>
